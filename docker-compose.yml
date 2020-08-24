@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    mysql:
+        container_name: mysql
+        image: mysql
+        environment:
+            -  MYSQL_ROOT_PASSWORD=senha_facil
+        networks:
+            - net
+    app:
+        container_name: app
+        build: 
+            context: .
+            args:
+                MAKE_MAGIC_API_KEY: "<<chave de api da potter api>>"
+        ports:
+            - "8080:80"
+        networks:
+            - net
+
+networks:
+        net:
