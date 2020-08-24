@@ -3,10 +3,14 @@
 #### Candidato: Luís Gabriel de Andrade
 
 ## Docker:
-- Em `docker-compose.yml`, substituir a variável de argumento `<<chave de api da potter api>>` com a chave da API;
+- Em `docker-compose.yml`, substituir a variável de argumento `<<make_magic_api_key>>` com a chave da API;
 - Buildar com `docker-compose build`;
 - Rodar com `docker-compose up -d`;
 - Aplicação estará ouvindo na porta 8080 do host.
+
+
+**Observação: como há um tempo entre a inicialização do container e a inicialização do MySQL é possível que a verificação inicial do banco pela aplicação falhe. Foi implementado um workaround que faz dez tentativas de conectar ao banco num intervalo de dez segundos. Se ainda assim não funcionar, será necessário reiniciar o container da aplicação com `docker container start app`.**
+
 
 ## Endpoints
 

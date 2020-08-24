@@ -13,7 +13,7 @@ services:
         build: 
             context: .
             args:
-                MAKE_MAGIC_API_KEY: "<<chave de api da potter api>>"
+                MAKE_MAGIC_API_KEY: "<<make_magic_api_key>>"
         ports:
             - "8080:80"
         networks:
